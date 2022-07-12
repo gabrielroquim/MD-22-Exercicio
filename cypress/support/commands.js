@@ -1,33 +1,34 @@
 /// <reference types="cypress" />
 
-Cypress.Commands.add('login', (user, pass) =>{
+Cypress.Commands.add('login', (user, pass) => {
     const fd = new FormData()
-    fd.append('log', user)
-    fd.append('pwd', pass)
-    fd.append('wp-submit', "Acessar")
-    fd.append('redirect_to', `/wp-admin`)
-    fd.append('testcookie', 1)
-
+    fd.append('username', user)
+    fd.append('password', pass)
+    fd.append('woocommerce-login-nonce', "f052895d86")
+    fd.append('_wp_http_referer', `minha-conta/`)
+    fd.append('login', "Login")
     cy.request({
-        url: '/wp-login.php',
+        url: 'minha-conta/',
         method: 'POST',
         body: fd
     }).then(resp => {
-        resp.headers['set-cookie'].forEach(cookie =>{
+        resp.headers['set-cookie']?.forEach(cookie => {
+            cy.log(resp.headers)
             const firstPart = cookie.split(';')[0]
             const divisor = firstPart.indexOf('=')
             const key = firstPart.substring(0, divisor)
-            const value = firstPart.substring(divisor+1)
+            const value = firstPart.substring(divisor + 1)
             cy.setCookie(key, value)
         })
     })
-    cy.visit('/wp-admin')
+    cy.visit('minha-conta/')
 })
 
-Cypress.Commands.add('checkout', ()=>{
+
+Cypress.Commands.add('checkout', () => {
     cy.request({
-        url: '/checkout/order-received/5433/?key=wc_order_i0DtQeEmUrndC',
+        url: 'minha-conta/customer-logout/?_wpnonce=08b88be764',
         method: 'GET'
     })
-    cy.visit('/checkout/order-received/5433/?key=wc_order_i0DtQeEmUrndC')
+    cy.visit('minha-conta/customer-logout/?_wpnonce=8284762935')
 })
