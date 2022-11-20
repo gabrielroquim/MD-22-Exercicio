@@ -3,7 +3,7 @@
 const faker = require('faker-br')
 const { loginPage, dashboardPage } = require('../support/pages')
 
-describe('Cadastro no Site EBAC-SHOP', () => {
+describe('Cadastro no site EBAC-SHOP', () => {
     beforeEach(() => {
         cy.visit('my-account/')
     });
