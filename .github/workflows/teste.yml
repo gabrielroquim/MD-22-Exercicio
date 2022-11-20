@@ -20,13 +20,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
+           start: npm start
       - name: Cypress run
         uses: cypress-io/github-action@v2
         continue-on-error: true
         with:
+          build: npm run build
           install-command: npm install
-          browser: chrome
-          start: npm start
+          browser: chrome          
       - name: Publish Report
         uses: peaceiris/actions-gh-pages@v3
         with:
