@@ -8,7 +8,7 @@ describe('Cadastro no site EBAC-SHOP', () => {
         cy.visit('my-account/')
     });
 
-    it('Deve realizar cadastro do usuário', () => {
+    it('Deve realizar cadastro do usuário ebac', () => {
 
         let email = faker.internet.email()
         let pass = faker.internet.password()
