@@ -21,7 +21,7 @@ sendo:
 
 # MD - 31 - Métricas de Qualidade
 
-# Ferramentas de Dashboards utilizadas
+## Ferramentas de Dashboards utilizadas
 - [SonarCloud](https://www.sonarsource.com/products/sonarcloud/)
 - [ReportIO](https://reportportal.io/)
 ### Install
