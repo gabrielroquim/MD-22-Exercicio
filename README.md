@@ -19,5 +19,23 @@ sendo:
 - [x] Criação de conta usando pageObjetcs
 - [x] Criação do fluxo de checkout usando AppAction
 
+# MD - 31 - Métricas de Qualidade
 
+# Ferramentas de Dashboards utilizadas
+[SonarCloud](https://www.sonarsource.com/products/sonarcloud/)
+[ReportIO](https://reportportal.io/)
+### Install
+
+ ```console
+$ npm install 
+```
+ ```console
+$ npm install cypress
+```
+ ```console
+$ npm install @reportportal/agent-js-cypress
+```
+### Run tests
+- Comando para executar os testes.
+`npm run cy:run`
 

@@ -17,6 +17,7 @@ describe('Cadastro no site EBAC-SHOP', () => {
 
         dashboardPage.siteName.should('be.visible');
         cy.get('.woocommerce-MyAccount-navigation-link--customer-logout > a').click()
+        cy.setStatusSkipped()
 
     });
 });

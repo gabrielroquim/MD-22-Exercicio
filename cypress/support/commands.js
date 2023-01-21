@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+require('@reportportal/agent-js-cypress/lib/commands/reportPortalCommands');
 
 Cypress.Commands.add('login', (user, pass) => {
     const fd = new FormData()
