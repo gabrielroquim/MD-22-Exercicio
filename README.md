@@ -19,5 +19,6 @@ sendo:
 - [x] Criação de conta usando pageObjetcs
 - [x] Criação do fluxo de checkout usando AppAction
 
+## Modulo 31- Métricas
 
 
